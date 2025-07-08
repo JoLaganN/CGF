@@ -23,7 +23,9 @@ School Base
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        'views/base_views',
+        # 'views/base_views.xml',
+        'views/res_partner_views.xml',
+        'views/cgf_student_views.xml',
     ],
     'sequence': -100,
 }
