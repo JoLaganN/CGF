@@ -1,0 +1,66 @@
+<odoo>
+    <data>
+
+        <record id="view_form_cgf_report" model="ir.ui.view">
+            <field name="name">cgf.report.form</field>
+            <field name="model">cgf.report</field>
+            <field name="arch" type="xml">
+                <form string="Student Report">
+                    <sheet>
+                        <group>
+                            <field name="sequence" readonly="1"/>
+                            <field name="date"/>
+                            <field name="student_id"/>
+                            <field name="homeroom_teacher"/>
+                            <field name="classroom"/>
+                            <field name="period_id"/>
+                        </group>
+
+                        <notebook>
+                            <page string="Courses">
+                                <field name="line_ids">
+                                    <list editable="bottom">
+                                        <field name="course_name"/>
+                                        <field name="teacher_name"/>
+                                        <field name="hours"/>
+                                        <field name="grade"/>
+                                    </list>
+                                </field>
+                            </page>
+                            <page string="Averages">
+                                <group>
+                                    <field name="average" readonly="1"/>
+                                    <field name="weighted_average" readonly="1"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_list_cgf_report" model="ir.ui.view">
+            <field name="name">cgf.report.list</field>
+            <field name="model">cgf.report</field>
+            <field name="arch" type="xml">
+                <list>
+                    <field name="sequence"/>
+                    <field name="student_id"/>
+                    <field name="period_id"/>
+                    <field name="average"/>
+                    <field name="weighted_average"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="action_cgf_report" model="ir.actions.act_window">
+            <field name="name">Reports</field>
+            <field name="res_model">cgf.report</field>
+            <field name="view_mode">list,form</field>
+        </record>
+
+        <menuitem id="menu_cgf_report_root" name="Reports" sequence="10"/>
+        <menuitem id="menu_cgf_report_main" name="Student Reports" parent="menu_cgf_report_root" action="action_cgf_report"/>
+
+    </data>
+</odoo>

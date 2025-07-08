@@ -1,4 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_cdg_report_card_system,cgf.report.card,model_cdg_report_card,base.group_system,1,1,1,1
-access_cdg_report_card_user,cgf.report.card,model_cdg_report_card,base.group_user,1,0,0,0
+access_cgf_report,cgf.report,model_cgf_report,1,1,1,1
+access_cgf_report_line,cgf.report.line,model_cgf_report_line,1,1,1,1
+access_cgf_report_period,cgf.report.period,model_cgf_report_period,1,1,1,1
 
