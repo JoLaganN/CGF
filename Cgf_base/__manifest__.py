@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "NomDeLextention",
+    'name': "CGF",
 
-    'summary': "Short (1 phrase/line) summary of the module's purpose",
+    'summary': "CGF.base",
 
     'description': """
-Long description of module's purpose
+School Base
     """,
 
-    'author': "jojo henry",
+    'author': "joachim henry",
     'website': "https://www.yourcompany.com",
 
     # Categories can be used to filter modules in modules listing
@@ -18,15 +18,12 @@ Long description of module's purpose
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'mail','sale'],
+    'depends': ['base'],
 
     # always loaded
     'data': [
-        'views/nom_du_model_a_heriter_views',
+        'security/ir.model.access.csv',
+        'views/base_views',
     ],
-    # only loaded in demonstration mode
-    # 'demo': [
-    #     'demo/demo.xml',
-    # ],
     'sequence': -100,
 }
