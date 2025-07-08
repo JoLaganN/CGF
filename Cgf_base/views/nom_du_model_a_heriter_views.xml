@@ -1,0 +1,26 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="sale_sale_order_tree">
+            <field name="name">sale.order tree</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_quotation_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='create_date']" position="before">
+                    <field name="validity_date"/>
+                </xpath>
+            </field>
+        </record>
+
+         <record model="ir.ui.view" id="sale_sale_order_form">
+            <field name="name">sale.order form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='date_order']" position="after">
+                    <field name="validity_date"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>
