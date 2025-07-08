@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "NomDeLextention",
+    'name': "ClassNewspaper",
 
     'summary': "Short (1 phrase/line) summary of the module's purpose",
 
@@ -8,7 +8,7 @@
 Long description of module's purpose
     """,
 
-    'author': "jojo henry",
+    'author': "Pyx",
     'website': "https://www.yourcompany.com",
 
     # Categories can be used to filter modules in modules listing
@@ -18,15 +18,23 @@ Long description of module's purpose
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'mail','sale'],
+    'depends': ['base', 'mail'],
 
     # always loaded
     'data': [
-        'views/nom_du_model_a_heriter_views',
+        'security/ir.model.access.csv',
+        'views/class_newspaper_views.xml',
+        'views/class_newspaper_absence_views.xml',
+        'views/class_newspaper_comments_views.xml',
+        'views/class_newspaper_schedule_views.xml',
+        'wizard/cgf_class_newspaper_absence_wizard_views.xml',
     ],
     # only loaded in demonstration mode
-    # 'demo': [
-    #     'demo/demo.xml',
-    # ],
+    'demo': [
+        'demo/demo.xml',
+    ],
+    'installable': True,
+    'application': True,
+    'auto_install': True,
     'sequence': -100,
 }

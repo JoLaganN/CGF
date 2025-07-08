@@ -1,4 +1,13 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_cdg_class_newspaper_system,cgf.class.newspaper,model_cdg_class_newspaper,base.group_system,1,1,1,1
-access_cdg_class_newspaper_user,cgf.class.newspaper,model_cdg_class_newspaper,base.group_user,1,0,0,0
+access_cgf_class_newspaper_system,cgf_class_newspaper,model_cgf_class_newspaper,base.group_system,1,1,1,1
+access_cgf_class_newspaper_user,cgf_class_newspaper,model_cgf_class_newspaper,base.group_user,1,0,0,0
+
+access_cgf_class_newspaper_absence_system,cgf_class_newspaper_absence,model_cgf_class_newspaper_absence,base.group_system,1,1,1,1
+access_cgf_class_newspaper_absence_user,cgf_class_newspaper_absence,model_cgf_class_newspaper_absence,base.group_user,1,0,0,0
+
+access_cgf_class_newspaper_comments_system,cgf_class_newspaper_comments,model_cgf_class_newspaper_comments,base.group_system,1,1,1,1
+access_cgf_class_newspaper_comments_user,cgf_class_newspaper_comments,model_cgf_class_newspaper_comments,base.group_user,1,0,0,0
+
+access_cgf_class_newspaper_schedule_system,cgf_class_newspaper_schedule,model_cgf_class_newspaper_schedule,base.group_system,1,1,1,1
+access_cgf_class_newspaper_schedule_user,cgf_class_newspaper_schedule,model_cgf_class_newspaper_schedule,base.group_user,1,0,0,0
 

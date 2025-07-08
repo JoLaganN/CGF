@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+   <data>
+
+<!--       <record id="absence_mail_template" model="mail.template">-->
+<!--           <field name="name">absence_mail_template</field>-->
+<!--           <field name="model_id" ref="cgf.class_newspaper_absence"/>-->
+<!--           <field name="subject">Testing Email Template "{{ object.name }}"</field>-->
+<!--           <field name="email_to">{{ object.user_id.email}}</field>-->
+<!--           <field name="body_html" type="html">-->
+<!--               <div style="margin: 0px; padding: 0px;">-->
+<!--                   <p style="margin: 0px; padding: 0px; font-size: 13px;">-->
+<!--                       Hello<span style="font-weight: bold;" t-out="object.user_id.name"/>,-->
+<!--                       <br/>-->
+<!--                       <br/>-->
+<!--                       This is the first mail for you.-->
+<!--                   </p>-->
+<!--               </div>-->
+<!--           </field>-->
+<!--           <field name="lang">{{ object.user_id.partner_id.lang or object.user_id.lang }}</field>-->
+<!--           <field name="auto_delete" eval="True"/>-->
+<!--       </record>-->
+
+   </data>
+</odoo>

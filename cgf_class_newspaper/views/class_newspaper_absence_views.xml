@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="class_newspaper_absence_list_views" model="ir.ui.view">
+            <field name="name">class_newspaper_list_view</field>
+            <field name="model">cgf.class_newspaper_absence</field>
+            <field name="arch" type="xml">
+                <list>
+                    <field name="absence_type"/>
+                    <field name="date"/>
+                    <field name="schedule"/>
+                    <field name="justified"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="class_newspaper_absence_form_views" model="ir.ui.view">
+            <field name="name">class_newspaper_list_view</field>
+            <field name="model">cgf.class_newspaper_absence</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="absence_type"/>
+                        <field name="date"/>
+                        <field name="schedule"/>
+                        <field name="justified"/>
+                    </group>
+                    <chatter/>
+                </form>
+            </field>
+        </record>
+
+        <record id="open_class_newspaper_views" model="ir.actions.act_window">
+            <field name="name">Class Newspaper</field>
+            <field name="res_model">cgf.class_newspaper_absence</field>
+            <field name="view_mode">list,form</field>
+            <field name="search_view_id" ref="class_newspaper_absence_list_views"/>
+        </record>
+
+        <menuitem id="class_newspaper_menu_root"
+                  name="Class Newspaper"
+                  web_icon="CGF,cgf_class_newspaper/static/description/icon.png"
+                  groups="base.group_user"/>
+
+        <menuitem
+                id="class_newspaper_absence_menu"
+                name="Absence"
+                parent="class_newspaper_menu_root"
+                action="open_class_newspaper_views"
+                sequence="1"/>
+
+    </data>
+</odoo>
+

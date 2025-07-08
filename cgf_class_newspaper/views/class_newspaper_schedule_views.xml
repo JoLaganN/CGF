@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="class_newspaper_schedule_list_views" model="ir.ui.view">
+            <field name="name">class_newspaper_schedule_list_view</field>
+            <field name="model">cgf.class_newspaper_schedule</field>
+            <field name="arch" type="xml">
+                <list>
+                </list>
+            </field>
+        </record>
+
+        <record id="class_newspaper_schedule_form_views" model="ir.ui.view">
+            <field name="name">class_newspaper_schedule_form_view</field>
+            <field name="model">cgf.class_newspaper_schedule</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="open_class_newspaper_schedule_views" model="ir.actions.act_window">
+            <field name="name">Class Newspaper</field>
+            <field name="res_model">cgf.class_newspaper_schedule</field>
+            <field name="view_mode">list,form</field>
+            <field name="search_view_id" ref="class_newspaper_schedule_list_views"/>
+        </record>
+
+        <menuitem
+                id="class_newspaper_schedule_menu"
+                name="Schedule"
+                parent="class_newspaper_menu_root"
+                action="open_class_newspaper_schedule_views"
+                sequence="3"/>
+
+    </data>
+</odoo>
+
