@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "NomDeLextention",
+    'name': "cgf_report",
 
     'summary': "Short (1 phrase/line) summary of the module's purpose",
 
@@ -18,11 +18,13 @@ Long description of module's purpose
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'mail','sale'],
+    'depends': ['base', 'mail', 'sale'],
 
     # always loaded
     'data': [
-        'views/nom_du_model_a_heriter_views',
+        'security/ir.model.access.csv',
+        'views/report_card_views.xml',
+        'views/report_period_views.xml',
     ],
     # only loaded in demonstration mode
     # 'demo': [

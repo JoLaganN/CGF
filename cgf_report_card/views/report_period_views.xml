@@ -1,0 +1,46 @@
+<odoo>
+    <data>
+
+        <record id="view_form_cgf_report_period" model="ir.ui.view">
+            <field name="name">cgf.report.period.form</field>
+            <field name="model">cgf.report_period</field>
+            <field name="arch" type="xml">
+                <form string="Report Period">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="start_date"/>
+                            <field name="end_date"/>
+                            <field name="period_type"/>
+                            <field name="percentage"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_list_cgf_report_period" model="ir.ui.view">
+            <field name="name">cgf.report.period.list</field>
+            <field name="model">cgf.report_period</field>
+            <field name="arch" type="xml">
+                <list>
+                    <field name="name"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                    <field name="period_type"/>
+                    <field name="percentage"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="action_cgf_report_period" model="ir.actions.act_window">
+            <field name="name">Report Periods</field>
+            <field name="res_model">cgf.report_period</field>
+            <field name="view_mode">list,form</field>
+        </record>
+
+        <menuitem id="menu_cgf_report_config" name="Configuration" parent="menu_cgf_report_root" sequence="20"/>
+        <menuitem id="menu_cgf_report_period" name="Periods" parent="menu_cgf_report_config" action="action_cgf_report_period"/>
+
+    </data>
+</odoo>
