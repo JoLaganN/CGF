@@ -21,6 +21,11 @@
                 </xpath>
             </field>
         </record>
+<!--id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink-->
+<!--access_cdg_base_system,cgf.base,model_cdg_base,base.group_system,1,1,1,1-->
+<!--access_cdg_base_user,cgf.base,model_cdg_base,base.group_user,1,0,0,0-->
+
+
 
     </data>
 </odoo>

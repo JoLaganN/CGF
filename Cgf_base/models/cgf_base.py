@@ -1,8 +1,10 @@
 from odoo import models, fields, api
 
-class SaleOrder(models.Model):
+class CgfBase(models.Model):
+    _name = 'cgf.base'
+    # _inherit = 'sale.order'
 
-    _inherit = 'sale.order'
+
 
 
 
