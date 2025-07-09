@@ -11,11 +11,60 @@
                 </list>
             </field>
         </record>
+
         <record id="my_cgf_students_actions_window" model="ir.actions.act_window">
             <field name="name">cgf students</field>
             <field name="res_model">cgf.students</field>
             <field name="view_mode">kanban,list,form</field>
         </record>
+
+        <record id="open_view_students_list_my" model="ir.actions.act_window">
+            <field name="name">students</field>
+            <field name="path">students</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">kanban,list,form</field>
+            <field name="domain">[("type_contact","=","student")]</field>
+            <field name="context">{'default_type_contact': 'student'}</field>
+            <!--            <field name="view_id" eval="False"/>-->
+            <!--            <field name="search_view_id" ref="view_employee_filter"/>-->
+        </record>
+
+        <record id="open_view_professor_list_my" model="ir.actions.act_window">
+            <field name="name">professor</field>
+            <field name="path">professor</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">kanban,list,form</field>
+            <field name="domain">[("type_contact","=","professor")]</field>
+            <field name="context">{'default_type_contact': 'professor'}</field>
+        </record>
+
+        <record id="open_view_holder_list_my" model="ir.actions.act_window">
+            <field name="name">holder</field>
+            <field name="path">holder</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">kanban,list,form</field>
+            <field name="domain">[("type_contact","=","holder")]</field>
+            <field name="context">{'default_type_contact': 'holder'}</field>
+        </record>
+
+        <record id="open_view_secretariat_direction_list_my" model="ir.actions.act_window">
+            <field name="name">secretariat/direction</field>
+            <field name="path">secretariat_direction</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">kanban,list,form</field>
+            <field name="domain">[("type_contact","=","secretariat/direction")]</field>
+            <field name="context">{'default_type_contact': 'secretariat/direction'}</field>
+        </record>
+
+        <record id="open_view_other_list_my" model="ir.actions.act_window">
+            <field name="name">other</field>
+            <field name="path">other</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">kanban,list,form</field>
+            <field name="domain">[("type_contact","=","other")]</field>
+            <field name="context">{'default_type_contact': 'other'}</field>
+        </record>
+
 
 
         <record model="ir.ui.view" id="cgf_students_form">
@@ -33,44 +82,25 @@
             </field>
 
         </record>
-<!--        <record id="action_students" model="ir.actions.server">-->
-<!--            <field name="name">action students</field>-->
-<!--            <field name="model_id" ref="model_cgf_students"/>-->
-<!--            <field name="binding_model_id" ref="my_cgf.model_cgf_students"/>-->
-<!--            <field name="state">code</field>-->
-<!--            <field name="binding_view_types">list,form</field>-->
-<!--            <field name="code">action = records.send_info_action()</field>-->
-<!--                    <field name="context">{'default_active': True}</field>-->
-<!--        </record>-->
-        <record id="cgf_students_kanban" model="ir.ui.view">
-            <field name="name">cgf.students.kanban</field>
-            <field name="model">cgf.students</field>
-            <field name="arch" type="xml">
-                <kanban>
-                    <templates>
-                        <t t-name="card" class="flex-row">
 
-                            <aside class="o_kanban_aside_full">
-                                <div class="o_kanban_image_fill position-relative w-100">
-                                    <field name="student_avatar" alt="cover-image" class="h-100" widget="image"
-                                           options="{'img_class': 'object-fit-cover'}"/>
-                                </div>
-                            </aside>
-                            <main class="ps-2 ps-md-0">
-                                <div class="mb-1">
-                                    <field name="name_students_ids"/>
-                                </div>
-                            </main>
-                        </t>
-                    </templates>
-                </kanban>
-            </field>
-        </record>
 
+        <!--                                <div class="oe_button_box" name="button_box">-->
+        <!--                            <button name="action_schedule_meeting" type="object"-->
+        <!--                                class="oe_stat_button" icon="fa-calendar"-->
+        <!--                                context="{'partner_id': partner_id}"-->
+        <!--                                invisible="not id or type == 'lead'">-->
 
         <menuitem id="cgf_menu_root" name="cgf_base" web_icon="Cgf_base,static/description/icon.png" sequence="1"/>
         <menuitem id="cgf_students_menu" name="students" parent="cgf_menu_root" sequence="2"
-                  action="my_cgf_students_actions_window"/>
+                  action="open_view_students_list_my"/>
+        <menuitem id="cgf_professor_menu" name="professor" parent="cgf_menu_root" sequence="3"
+                  action="open_view_professor_list_my"/>
+        <menuitem id="cgf_holder_menu" name="holder" parent="cgf_menu_root" sequence="4"
+                  action="open_view_holder_list_my"/>
+        <menuitem id="cgf_secretariat_direction_menu" name="secretariat/direction" parent="cgf_menu_root" sequence="5"
+                  action="open_view_secretariat_direction_list_my"/>
+        <menuitem id="cgf_other_menu" name="other" parent="cgf_menu_root" sequence="6"
+                  action="open_view_other_list_my"/>
 
     </data>
 
