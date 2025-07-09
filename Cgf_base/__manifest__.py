@@ -26,6 +26,7 @@ School Base
         # 'views/base_views.xml',
         'views/res_partner_views.xml',
         'views/cgf_student_views.xml',
+        'views/cgf_lessons_views.xml',
     ],
     'sequence': -100,
 }

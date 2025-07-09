@@ -1,0 +1,80 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="cgf_lessons_list">
+            <field name="name">cgf.lessons.list</field>
+            <field name="model">cgf.lessons</field>
+            <field name="arch" type="xml">
+                <list>
+                    <!--                    <field name="name_lessons_ids"/>-->
+                    <field name="name"/>
+                    <field name="lessons_type"/>
+                    <field name="nb_hour"/>
+                    <field name="degree"/>
+                    <field name="cover" widget="image"/>
+                    <field name="select_professor_id"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="my_cgf_lessons_actions_window" model="ir.actions.act_window">
+            <field name="name">cgf lessons</field>
+            <field name="res_model">cgf.lessons</field>
+            <field name="view_mode">kanban,list,form</field>
+        </record>
+
+
+        <record model="ir.ui.view" id="cgf_lessons_form">
+
+            <field name="name">cgf.lessons.form</field>
+            <field name="model">cgf.lessons</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <!--                            <field name="name_lessons_ids"/>-->
+                            <field name="name"/>
+                            <field name="lessons_type"/>
+                            <field name="nb_hour"/>
+
+                        </group>
+                        <group>
+                            <field name="degree"/>
+                            <field name="cover" widget="image"/>
+                            <field name="select_professor_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+
+        </record>
+
+        <record id="cgf_lessons_kanban" model="ir.ui.view">
+            <field name="name">cgf.lessons.kanban</field>
+            <field name="model">cgf.lessons</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <templates>
+                        <t t-name="card" class="flex-row">
+                            <aside class="o_kanban_aside_full">
+                                <div class="o_kanban_image_fill position-relative w-100">
+                                    <field name="cover" alt="cover-image" class="h-100" widget="image"
+                                           options="{'img_class': 'object-fit-cover'}"/>
+                                </div>
+                            </aside>
+                            <main class="ps-2 ps-md-0">
+                                <div class="mb-1">
+                                    <field name="name"/>
+                                </div>
+                                <field name="select_professor_id"/>
+                            </main>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+
+        <menuitem id="cgf_lessons_menu" name="lessons" parent="cgf_menu_root" sequence="7"
+                  action="my_cgf_lessons_actions_window"/>
+    </data>
+</odoo>

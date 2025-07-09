@@ -3,7 +3,7 @@
 from . import cgf_base
 from . import res_partner
 from . import cgf_students
-
+from . import cgf_lessons
 
 
 
