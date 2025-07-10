@@ -16,21 +16,18 @@ class Report(models.Model):
     average = fields.Float(compute='_compute_averages', store=True)
     weighted_average = fields.Float(compute='_compute_averages', store=True)
 
-    @api.model
-    def create(self, vals):
-        # Si sequence est encore "New", on construit notre identifiant
-        if vals.get('sequence', 'New') == 'New':
-            # Récupération des éléments nécessaires
-            period = self.env['cgf.report_period'].browse(vals.get('period_id'))
-            student = self.env['res.partner'].browse(vals.get('student_id'))
-            date = vals.get('date') or fields.Date.today()
+    @api.model_create_multi
+    def create(self, vals_list):
+
+        records = super().create(vals_list)
+        for rec in records:
+            period_name = rec.period_id.name
+            student_name=rec.student_id.name
+            date= rec.date or fields.Date.today()
             year = datetime.strptime(date, '%Y-%m-%d').year if isinstance(date, str) else date.year
 
-            period_name = period.name or 'NoPeriod'
-            student_name = student.name.replace('/', '-') if student else 'NoName'
-
-            vals['sequence'] = f"{year}/{period_name}/{student_name}"
-        return super().create(vals)
+            rec.sequence= f"{year}/{period_name}/{student_name}"
+        return records
 
     @api.depends('line_ids.grade', 'line_ids.hours')
     def _compute_averages(self):
