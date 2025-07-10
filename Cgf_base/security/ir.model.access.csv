@@ -3,3 +3,11 @@ access_cdg_base_cgd_students_system,cgf.students,model_cgf_students,base.group_s
 access_cdg_base_cgd_students_user,cgf.students,model_cgf_students,base.group_user,1,0,0,0
 access_cdg_base_cgd_lessons_system,cgf.lessons,model_cgf_lessons,base.group_system,1,1,1,1
 access_cdg_base_cgd_lessons_user,cgf.lessons,model_cgf_lessons,base.group_user,1,0,0,0
+access_cdg_base_cgd_config_type_system,cgf.config.type,model_cgf_config_type,base.group_system,1,1,1,1
+access_cdg_base_cgd_config_type_user,cgf.config.type,model_cgf_config_type,base.group_user,1,0,0,0
+access_cdg_base_cgd_config_degree_system,cgf.config.degree,model_cgf_config_degree,base.group_system,1,1,1,1
+access_cdg_base_cgd_config_degree_user,cgf.config.degree,model_cgf_config_degree,base.group_user,1,0,0,0
+access_cdg_base_cgd_program_system,cgf.program,model_cgf_program,base.group_system,1,1,1,1
+access_cdg_base_cgd_program_user,cgf.program,model_cgf_program,base.group_user,1,0,0,0
+access_cdg_base_cgd_class_system,cgf.class,model_cgf_class,base.group_system,1,1,1,1
+access_cdg_base_cgd_class_user,cgf.class,model_cgf_class,base.group_user,1,0,0,0

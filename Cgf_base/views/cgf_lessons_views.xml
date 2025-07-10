@@ -7,9 +7,9 @@
                 <list>
                     <!--                    <field name="name_lessons_ids"/>-->
                     <field name="name"/>
-                    <field name="lessons_type"/>
+                    <field name="lessons_type_ids" widget="many2many_tags"/>
                     <field name="nb_hour"/>
-                    <field name="degree"/>
+                    <field name="degree_ids"/>
                     <field name="cover" widget="image"/>
                     <field name="select_professor_id"/>
                 </list>
@@ -33,12 +33,11 @@
                         <group>
                             <!--                            <field name="name_lessons_ids"/>-->
                             <field name="name"/>
-                            <field name="lessons_type"/>
+                            <field name="lessons_type_ids"/>
                             <field name="nb_hour"/>
-
                         </group>
                         <group>
-                            <field name="degree"/>
+                            <field name="degree_ids"/>
                             <field name="cover" widget="image"/>
                             <field name="select_professor_id"/>
                         </group>

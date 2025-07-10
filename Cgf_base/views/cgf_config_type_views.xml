@@ -1,0 +1,41 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="cgf_config_type_list">
+            <field name="name">cgf.config.type.list</field>
+            <field name="model">cgf.config.type</field>
+            <field name="arch" type="xml">
+                <list>
+                    <field name="lessons_type"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="my_cgf_config_type_actions_window" model="ir.actions.act_window">
+            <field name="name">cgf config type</field>
+            <field name="res_model">cgf.config.type</field>
+            <field name="view_mode">list,form</field>
+        </record>
+
+        <record model="ir.ui.view" id="cgf_config_type_form">
+            <field name="name">cgf.config.type.form</field>
+            <field name="model">cgf.config.type</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="lessons_type"/>
+<!--                            readonly="[('groups_id', 'not in', [ref('base.group_system')])]}-->
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+
+        </record>
+
+
+
+
+        <menuitem id="cgf_config_menu" name="config" parent="cgf_menu_root" sequence="8"/>
+        <menuitem id="cgf_config_type_menu" name="type" parent="cgf_config_menu" action="my_cgf_config_type_actions_window"/>
+    </data>
+</odoo>

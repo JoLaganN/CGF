@@ -1,0 +1,39 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="cgf_config_degree_list">
+            <field name="name">cgf.config.degree.list</field>
+            <field name="model">cgf.config.degree</field>
+            <field name="arch" type="xml">
+                <list>
+                    <field name="degree"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="my_cgf_config_degree_actions_window" model="ir.actions.act_window">
+            <field name="name">cgf config degree</field>
+            <field name="res_model">cgf.config.degree</field>
+            <field name="view_mode">list,form</field>
+        </record>
+
+
+        <record model="ir.ui.view" id="cgf_config_degree_form">
+            <field name="name">cgf.config.degree.form</field>
+            <field name="model">cgf.config.degree</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <field name="degree"/>
+                    </sheet>
+                </form>
+            </field>
+
+        </record>
+
+
+
+
+        <menuitem id="cgf_config_degree_menu" name="degree" parent="cgf_config_menu" action="my_cgf_config_degree_actions_window"/>
+
+    </data>
+</odoo>

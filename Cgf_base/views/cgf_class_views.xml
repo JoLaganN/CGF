@@ -1,0 +1,74 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="cgf_class_list">
+            <field name="name">cgf.class.list</field>
+            <field name="model">cgf.class</field>
+            <field name="arch" type="xml">
+                <list>
+                    <!--                    <field name="name_class_ids"/>-->
+                    <field name="name"/>
+                    <field name="name_students_ids" widget="many2many_tags"/>
+                    <field name="name_holder_ids"/>
+                    <field name="degree_ids"/>
+                    <field name="prog_ids" widget="many2many_tags"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="my_cgf_class_actions_window" model="ir.actions.act_window">
+            <field name="name">cgf class</field>
+            <field name="res_model">cgf.class</field>
+            <field name="view_mode">kanban,list,form</field>
+        </record>
+
+
+        <record model="ir.ui.view" id="cgf_class_form">
+
+            <field name="name">cgf.class.form</field>
+            <field name="model">cgf.class</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <!--                            <field name="name_class_ids"/>-->
+                            <field name="name"/>
+                            <field name="name_students_ids" widget="many2many_tags"/>
+                            <field name="name_holder_ids"/>
+                        </group>
+                        <group>
+                            <field name="degree_ids"/>
+                            <field name="prog_ids" widget="many2many_tags"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+
+        </record>
+
+        <record id="cgf_class_kanban" model="ir.ui.view">
+            <field name="name">cgf.class.kanban</field>
+            <field name="model">cgf.class</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <templates>
+                        <t t-name="card" class="flex-row">
+                            <main class="ps-2 ps-md-0">
+                                <div class="mb-1">
+                                    <field name="name"/>
+                                </div>
+<!--                                <field name="name_students_ids" widget="many2many_tags"/>-->
+                                <field name="name_holder_ids"/>
+                                <field name="degree_ids"/>
+                                <field name="prog_ids" widget="many2many_tags"/>
+                            </main>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+
+        <menuitem id="cgf_class_menu" name="class" parent="cgf_menu_root" sequence="10"
+                  action="my_cgf_class_actions_window"/>
+    </data>
+</odoo>

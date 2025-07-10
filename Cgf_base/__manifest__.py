@@ -27,6 +27,10 @@ School Base
         'views/res_partner_views.xml',
         'views/cgf_student_views.xml',
         'views/cgf_lessons_views.xml',
+        'views/cgf_config_type_views.xml',
+        'views/cgf_config_degree_views.xml',
+        'views/cgf_program_views.xml',
+        'views/cgf_class_views.xml',
     ],
     'sequence': -100,
 }
